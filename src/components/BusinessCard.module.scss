@@ -2,12 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--chakra-space-2);
+    gap: var(--chakra-space-4);
     height: 100%;
     width: 100%;
     padding: var(--chakra-space-4);
     font-size: var(--chakra-fontSizes-2xs);
     border-radius: var(--chakra-radii-md);
-    background-color: red;
+    border-color: gray;
+    box-shadow: rgba(0, 0, 0, 0.07) 1px 4px 20px 0px;
+    background-color: var(--chakra-colors-white);
+}
 
+.text {
+    width: 100%;
 }

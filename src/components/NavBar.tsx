@@ -4,8 +4,11 @@ import { Icon } from "../assets/Icon";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import styles from "./NavBar.module.scss";
 import { NavBarItem } from "./NavBarItem";
+import { useAuthContext } from "../domain/state/AuthContext";
 
 export const NavBar = () => {
+  const { logout } = useAuthContext();
+
   return (
     <VStack className={styles.navContainer}>
       <Box display="flex" flexDirection="column">
@@ -27,6 +30,7 @@ export const NavBar = () => {
             icon={<Icon name="Logout" className={styles.iconButton} />}
             variant="ghost"
             className={styles.iconButton}
+            onClick={logout}
           />
         </Tooltip>
       </Box>

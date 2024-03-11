@@ -11,11 +11,11 @@ export const useSummary = () => {
   useEffect(() => {
     if (!summary) {
       actions.setSummary({
-        maxLoan: 100000,
-        range: [1000, 100000],
+        maxLoan: 15000,
+        range: [30, 60],
         rangeType: "days",
-        goal: "Purchase Equipment",
-        eligibilityPercentage: 100,
+        goal: "Hire more people",
+        eligibilityPercentage: 0.66,
         creditScore: { value: 600, level: "warning" },
         profit: { value: 1000, level: "success" },
         monthlyRevenue: { value: 14000, level: "success" },

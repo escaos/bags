@@ -7,6 +7,7 @@ import bodegaImage from "../assets/images/bodega.webp";
 
 import styles from "./Banner.module.scss";
 import Icon from "../assets/Icon";
+import { APP_BG_YELLOW_500 } from "../styles/Theme";
 
 export const Banner = () => {
   const handleClick = () => {
@@ -57,7 +58,12 @@ export const Banner = () => {
           Your first call with a Funding Coach is on us. Learn more about how a
           Bodega Plan is the next step in growing your business with Bags.
         </Text>
-        <Button onClick={handleClick} className={styles.button}>
+        <Button
+          onClick={handleClick}
+          className={styles.button}
+          bg={APP_BG_YELLOW_500}
+          fontSize="var(--chakra-fontSizes-2xs)"
+        >
           Talk to Funding Coach
         </Button>
       </Box>

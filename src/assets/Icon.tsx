@@ -11,6 +11,8 @@ import {
   RiChat2Line,
   RiRouteLine,
 } from "react-icons/ri";
+import { FaMoneyBillWave } from "react-icons/fa";
+import { BsGraphUp } from "react-icons/bs";
 
 const Logo = lazy(() => import("./images/Logo"));
 
@@ -24,6 +26,8 @@ const icons = {
   Star: RiStarLine,
   Chats: RiChat2Line,
   Route: RiRouteLine,
+  MoneyBill: FaMoneyBillWave,
+  GraphUp: BsGraphUp,
 
   Logo,
 };
