@@ -1,6 +1,6 @@
 // components/PublicRoute.tsx
 import { Navigate } from "react-router-dom";
-import { useAuthContext } from "../state/AuthContext";
+import { useAuthContext } from "../domain/state/AuthContext";
 import { PropsWithChildren, ReactElement } from "react";
 
 export const PublicRoute = ({

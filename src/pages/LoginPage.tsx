@@ -1,4 +1,4 @@
-import { useAuthContext } from "../state/AuthContext";
+import { useAuthContext } from "../domain/state/AuthContext";
 import { Button } from "@chakra-ui/react";
 
 export const LoginPage = () => {

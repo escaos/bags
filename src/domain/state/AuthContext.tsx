@@ -8,11 +8,13 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useTotals } from "../../services/hooks/useTotals";
 
 type ProviderProps = PropsWithChildren;
 interface Props {
   isLoading: boolean;
   isAuthenticated: boolean;
+  name: string;
   login: () => void;
   logout: () => void;
 }
@@ -22,14 +24,18 @@ const Context = createContext<Props | undefined>(undefined);
 const Provider = ({ children }: ProviderProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { actions } = useTotals();
+  const [name] = useState("Test Testos");
 
   const login = useCallback(() => {
     setIsAuthenticated(true);
-  }, []);
+    actions.clearTotals();
+  }, [actions]);
 
   const logout = useCallback(() => {
     setIsAuthenticated(false);
-  }, []);
+    actions.clearTotals();
+  }, [actions]);
 
   // Mounted
   useEffect(() => {
@@ -42,8 +48,8 @@ const Provider = ({ children }: ProviderProps) => {
   }, []);
 
   const values = useMemo(
-    () => ({ isLoading, isAuthenticated, login, logout }),
-    [isAuthenticated, isLoading, login, logout]
+    () => ({ isLoading, isAuthenticated, name, login, logout }),
+    [isAuthenticated, isLoading, login, logout, name]
   );
 
   return <Context.Provider value={values}>{children}</Context.Provider>;

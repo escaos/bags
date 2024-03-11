@@ -1,39 +1,35 @@
-import { Box, Divider, IconButton, Link, VStack } from "@chakra-ui/react";
-import {
-  FiFileText,
-  FiHome,
-  FiLogOut,
-  FiMenu,
-  FiSettings,
-} from "react-icons/fi";
+import { Box, Divider, IconButton, Tooltip, VStack } from "@chakra-ui/react";
+
+import { Icon } from "../assets/Icon";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import styles from "./NavBar.module.scss";
+import { NavBarItem } from "./NavBarItem";
 
 export const NavBar = () => {
   return (
-    <VStack
-      bg="gray.100"
-      color="black"
-      p={4}
-      spacing={4}
-      align="stretch"
-      border="var(--chakra-colors-chakra-border-color)"
-    >
-      <IconButton aria-label="Settings" icon={<FiSettings />} variant="ghost" />
-      <IconButton aria-label="Menu" icon={<FiMenu />} variant="ghost" />
-      <Divider />
-      <Link href="/dashboard">
-        <Box display="flex" alignItems="center">
-          <FiHome />
-        </Box>
-      </Link>
-      <Link href="/documents">
-        <Box display="flex" alignItems="center">
-          <FiFileText />
-        </Box>
-      </Link>
-      <Divider />
-      <ColorModeSwitcher />
-      <IconButton aria-label="Log out" icon={<FiLogOut />} variant="ghost" />
+    <VStack className={styles.navContainer}>
+      <Box display="flex" flexDirection="column">
+        <IconButton
+          aria-label="Logo"
+          icon={<Icon name="Logo" className={styles.logo} />}
+          variant="ghost"
+          className={styles.iconButton}
+        />
+        <Divider m="1rem 0 0" />
+        <NavBarItem name="Dashboard" href="/dashboard" />
+        <NavBarItem name="Documents" href="/documents" />
+      </Box>
+      <Box display="flex" flexDirection="column" alignItems={"center"}>
+        <ColorModeSwitcher />
+        <Tooltip label="Logout">
+          <IconButton
+            aria-label="Log out"
+            icon={<Icon name="Logout" className={styles.iconButton} />}
+            variant="ghost"
+            className={styles.iconButton}
+          />
+        </Tooltip>
+      </Box>
     </VStack>
   );
 };

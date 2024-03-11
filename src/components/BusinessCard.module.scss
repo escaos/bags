@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--chakra-space-2);
+    height: 100%;
+    width: 100%;
+    padding: var(--chakra-space-4);
+    font-size: var(--chakra-fontSizes-2xs);
+    border-radius: var(--chakra-radii-md);
+    background-color: red;
+
+}
