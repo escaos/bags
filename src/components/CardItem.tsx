@@ -1,6 +1,6 @@
+import { Box, Text } from "@chakra-ui/react";
 import Icon, { IconNames } from "../assets/Icon";
 import { Level } from "../domain/types/common";
-import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 
 type Props = {
   icon: IconNames;

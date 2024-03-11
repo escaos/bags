@@ -1,6 +1,6 @@
 import { StateCreator } from "zustand";
 
-interface GrowthYear {
+export interface GrowthYear {
   month: number;
   year: number;
   growth: number;

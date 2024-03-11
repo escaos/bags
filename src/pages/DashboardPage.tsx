@@ -3,6 +3,7 @@ import { Banner } from "../components/Banner";
 import { CardTotals } from "../components/CardTotals";
 import { useAuthContext } from "../domain/state/AuthContext";
 import { BusinessCard } from "../components/BusinessCard";
+import { RevenueChart } from "../components/RevenueChart";
 
 export const DashboardPage = () => {
   const { name } = useAuthContext();
@@ -25,8 +26,8 @@ export const DashboardPage = () => {
       <GridItem area={"banner"}>
         <Banner />
       </GridItem>
-      <GridItem pl="2" bg="green.300" area={"revenue"}>
-        Revenue
+      <GridItem area={"revenue"}>
+        <RevenueChart />
       </GridItem>
       <GridItem area={"totals"}>
         <CardTotals />
